@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Регистрация</title>
+    <link type="text/css" href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet" />
+</head>
+<body>
+    <div class="background">
+        <header>
+            {% for hl in header_left %}
+            <div class="header_title_left">
+                <a href="{{hl.url}}">{{hl.title}}</a>
+            </div>
+            {% endfor %}
+            {% for hr in header_right %}
+            <div class="header_title_right">
+                <a href="{{hr.url}}">{{hr.title}}</a>
+            </div>
+            {% endfor %}
+        </header>
+
+        <form action="/register" method="post" class="container_register">
+            <h2>Регистрация</h2>
+            <div class="register_form">
+                <p>Имя:</p>
+                <input type="text" name="name" required class="register_input">
+                <p>Email:</p>
+                <input type="text" name="email" required class="register_input">
+                <p>Пароль:</p>
+                <input type="password" name="password" required class="register_input">
+                <p>Повтор пароля:</p>
+                <input type="password" name="password_check" required class="register_input">
+            </div>
+            <br>
+            {% for msg in get_flashed_messages() %}
+            <div class="flash">{{msg}}</div>
+            {% endfor %}
+            <br>
+            <button type="submit" class="register_button">Регистрация</button>
+        </form>
+    </div>
+</body>
+</html>
