@@ -1,0 +1,249 @@
+header {
+    background-color: rgb(39, 39, 39);
+    color: white;
+    width: 100%;
+    height: 90px;
+    font-size: 150%;
+
+}
+
+a,
+a:visited {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    color:rgb(67, 139, 247);
+    transition: 0.2s;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.header_title_left {
+    height: 100%;
+    float: left;
+    display: grid;
+    align-items: center;
+    align-content: center;
+    padding-left: 20px;
+}
+
+.header_title_right {
+    height: 100%;
+    float: right;
+    display: grid;
+    align-items: center;
+    align-content: center;
+    padding-right: 20px;
+}
+
+.container_login {
+    width: 400px;
+    height: 400px;
+    padding: 20px;
+    font-size: 150%;
+    color: white;
+    background-color: rgba(39, 39, 39, 0.7);
+    border: 5px solid rgb(20, 20, 20);
+    border-radius: 10px;
+    text-align: center;
+    justify-items: center
+}
+
+.container_register {
+    width: 400px;
+    height: 550px;
+    padding: 20px;
+    font-size: 150%;
+    color: white;
+    background-color: rgba(39, 39, 39, 0.7);
+    border: 5px solid rgb(20, 20, 20);
+    border-radius: 10px;
+    text-align: center;
+    justify-items: center
+}
+
+.container_links {
+    float: left;
+    width: 900px;
+    padding: 20px;
+    font-size: 150%;
+    color: white;
+    background-color: rgba(39, 39, 39, 0.7);
+    border-right: 5px solid rgb(20, 20, 20);
+    border-bottom: 5px solid rgb(20, 20, 20);
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    justify-items: center
+}
+
+.container_shortener {
+    width: 400px;
+    height: 400px;
+    padding: 20px;
+    font-size: 150%;
+    color: white;
+    background-color: rgba(39, 39, 39, 0.7);
+    border: 5px solid rgb(20, 20, 20);
+    border-radius: 10px;
+    text-align: center;
+    justify-items: center
+}
+
+.login_form {
+    display: grid;
+    width: 300px;
+    height: 100px;
+    grid-template-columns: 1fr 1fr;
+    align-content: center;
+    align-items: center
+}
+
+.keyword_form {
+    display: grid;
+    width: 300px;
+    height: 100px;
+    grid-template-columns: 70% 30%;
+    align-content: center;
+    align-items: center
+}
+
+.register_form {
+    display: grid;
+    width: 300px;
+    height: 300px;
+    grid-template-columns: 1fr 1fr;
+    align-content: center;
+    align-items: center
+}
+
+.login_input,
+.register_input,
+.short_select {
+    height: 30px;
+}
+
+.login_button,
+.register_button {
+    background-color: rgb(39, 39, 39);
+    color: white;
+    border: 0;
+    width: 150px;
+    height: 30px;
+    transition: 0.3s;
+    font-size: 75%;
+    cursor: pointer;
+}
+
+.login_button:hover,
+.register_button:hover {
+    color:rgb(67, 139, 247);
+    transition: 0.2s;
+    border: 1px solid rgb(67, 139, 247);
+}
+
+.background {
+    width: 100%;
+    height: 100vh;
+    background-image: url("background.png");
+    display: grid;
+    justify-items: center
+}
+
+.background_for_links {
+    width: 100%;
+    height: 100vh;
+    background-image: url("background.png");
+}
+
+.links {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.my_links {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 2fr 3fr;
+}
+
+.delete_button,
+.update_button {
+    background-color: rgb(39, 39, 39);
+    color: white;
+    border: 0;
+    width: 150px;
+    height: 30px;
+    transition: 0.3s;
+    font-size: 75%;
+    cursor: pointer;
+}
+
+.delete_button:hover {
+    color:rgb(247, 67, 67);
+    transition: 0.2s;
+    border: 1px solid rgb(247, 67, 67);
+}
+
+.update_button:hover {
+    color:rgb(67, 139, 247);
+    transition: 0.2s;
+    border: 1px solid rgb(67, 139, 247);
+}
+
+.link_type {
+    font-size: 70%;
+}
+
+.links_second_container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.container_a_links {
+    float: right;
+    width: 900px;
+    padding: 20px;
+    font-size: 150%;
+    color: white;
+    background-color: rgba(39, 39, 39, 0.7);
+    border-left: 5px solid rgb(20, 20, 20);
+    border-bottom: 5px solid rgb(20, 20, 20);
+    border-bottom-left-radius: 10px;
+    text-align: center;
+    justify-items: center
+}
+
+.shortener_form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+    
+}
+
+.shortener_input {
+    height: 30px;
+    width: 70%;
+    margin: 10px;
+}
+
+.shortener_input::placeholder {
+    color: black;
+    font-weight: bold;
+}
+
+.shortener_flash {
+    color: rgb(67, 139, 247);
+}
+
+.shortener_flash:hover {
+    color: rgb(0, 78, 194);
+}
