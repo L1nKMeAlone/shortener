@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Сокращатель</title>
+    <link type="text/css" href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet" />
+</head>
+<body>
+<div class="background">
+     <header>
+        {% for hl in header_left %}
+        <div class="header_title_left">
+            <a href="{{hl.url}}">{{hl.title}}</a>
+        </div>
+        {% endfor %}
+        {% for hr in header_right %}
+        <div class="header_title_right">
+            <a href="{{hr.url}}">{{hr.title}}</a>
+        </div>
+        {% endfor %}
+    </header>
+
+    <form action="/shortener" method="post" class="container_shortener">
+        <h2>Сокращатель</h2>
+        <div class="shortener_form">
+            <input type="text" name="shortener" required class="shortener_input" placeholder="Ссылка">
+            <input type="text" name="keyword" class="shortener_input" placeholder="Ключевое слово">
+        </div>
+
+        <select name="link_type" class="short_select">
+            <option value="1" selected>Общедоступная</option>
+            <option value="2">Приватная</option>
+            <option value="3">Для авторизированных</option>
+        </select>
+        <br>
+        <br>
+        {% for msg in flash_links %}
+        <a href={{msg.long_link}} class="shortener_flash" target="_blank">{{msg.short_link}}</a>
+        <br>
+        {% endfor %}
+        <br>
+        <button type="submit" class="login_button">Сократить</button> <br><br>
+    </form>
+</div>
+
+</body>
+</html>
