@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Мои ссылки</title>
+    <link type="text/css" href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet" />
+</head>
+<body>
+<div class="background_for_links">
+     <header>
+            {% for hl in header_left %}
+            <div class="header_title_left">
+                <a href="{{hl.url}}">{{hl.title}}</a>
+
+            </div>
+            {% endfor %}
+
+            {% for hr in header_right %}
+            <div class="header_title_right">
+                <a href="{{hr.url}}">{{hr.title}}</a>
+            </div>
+            {% endfor %}
+        </header>
+
+    <div class="container_links">
+        <h2>Мои ссылки</h2>
+        <div class="my_links">
+            {% for l in links %}
+            <div>
+                <form action="/change_link" method="post">
+                    <select name="change_link_type">
+                        {% for lp in link_type %}
+                          {% if l.type_id == lp.link_type_id %}
+                                <option value={{lp.link_type_id}} selected >{{lp.link_type}}</option>
+                            {% else %}
+                                <option value={{lp.link_type_id}}>{{lp.link_type}}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                    <input type="hidden" name="change_link_id" value={{l.id}}>
+                    <button type="submit" class="update_button">Изменить</button>
+                </form>
+            </div>
+            <form action="/links" method="post">
+                <div class="links_second_container">
+                        <a href="{{l.long_link}}" target="_blank">{{l.short_link}}</a>
+                        <button name="delete" type="submit" class="delete_button" value="{{l.id}}">Удалить</button>
+                </div>
+
+            </form>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

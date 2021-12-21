@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Главная</title>
+    <link type="text/css" href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet" />
+</head>
+<body>
+<div class="background_for_links">
+     <header>
+            {% for hl in header_left %}
+            <div class="header_title_left">
+                <a href="{{hl.url}}">{{hl.title}}</a>
+            </div>
+            {% endfor %}
+            {% for hr in header_right %}
+            <div class="header_title_right">
+                <a href="{{hr.url}}">{{hr.title}}</a>
+            </div>
+            {% endfor %}
+        </header>
+
+    <form class="container_links">
+        <h2>Общедоступные ссылки</h2>
+        <div class="links">
+            {% for g in general_links %}
+                <a href="{{g.long_link}}" target="_blank">{{g.short_link}}</a>
+            {% endfor %}
+        </div>
+
+    </form>
+    <form class="container_a_links">
+        <h2>Ссылки для авторизированных пользователей</h2>
+        <div class="links">
+            {% for a in authorized_links %}
+                <a href="{{a.long_link}}" target="_blank">{{a.short_link}}</a>
+            {% endfor %}
+        </div>
+
+    </form>
+</div>
+</body>
+</html>
